@@ -1,0 +1,98 @@
+{% extends "uciprereqs/base.html" %}
+{% block title %}UCI Prereqs{% endblock %}
+{% block headertitle %}UCI Prereqs{% endblock %}
+
+{% block txt %}
+<div class="row" id='main-row'>
+
+	<div class="box spacer" style="flex-basis:2%"></div>
+
+	<div class="box" style="flex-basis:auto" id="selectside">
+		<form method="post">
+			<label for="selectDept">Select Department</label>
+			<br>
+			<select name="selectDept" id="selectDept">
+				<option value="">Departments</option>
+				{% for dept in openDepts %}
+					<option value="{{ dept }}">{{ dept }}</option>
+				{% endfor %}
+			</select>
+		</form>
+
+		<label class='classList' for="classlist" id='classesLabel' style='display: none'>Select Class</label>
+		<select class='classList' name="classList" id="classList" style="display: none">
+			<option value="">Courses</option>
+		</select>
+		<br>
+
+		<label for="history">
+			Recently Viewed
+		</label>
+
+		<div class="history" name="history">
+			<div class="checked-class temp">
+				<span class="prev-class"></span>
+			</div>
+		</div>
+
+	</div>
+	<div class="box" style="flex-basis:55%" id="results">
+		<br>
+		<span id="coursebadge">
+			<span id="selectedDept">d</span>
+			<span id="selectedNum"></span>
+		</span>
+		<span id="title" class="coursetitle"></span>
+		<br>
+		<span id="desc" class="desc"></span>
+			<ul class="prereqs" id="prereqs" style='display:none'>
+				<li class='prereqitem'>prereq</li>
+			</ul>
+			<div id="listing-area">
+			<div class="listing no-listing" id="no-listing">
+			</div>
+			<div class="listing listing-schedule" id="listing-schedule">
+				<br>
+				<div class="listing-row row">
+					<div class="box quarterbox" id='Fall' style='flex-basis:50%'>
+						<div class="quartertitle">
+							Fall
+						</div>
+						<div class="quartercontent" id='Fallqcontent'>
+							<div class="professor-listing">
+							</div>
+						</div>
+					</div>
+					<div class="box quarterbox" id='Winter' style='flex-basis:50%'>
+						<div class="quartertitle">
+							Winter
+						</div>
+						<div class="quartercontent" id='Winterqcontent'>
+							<div class="professor-listing">
+							</div>
+						</div>
+					</div>
+					<div class="box quarterbox" id='Spring' style='flex-basis:50%'>
+						<div class="quartertitle">
+							Spring
+						</div>
+						<div class="quartercontent" id='Springqcontent'>
+							<div class="professor-listing">
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="debugarea">
+
+		</div>
+	</div>
+</div>
+<div class="box spacer" style="flex-basis:1%"></div>
+</div>
+</div>
+
+{% endblock %}

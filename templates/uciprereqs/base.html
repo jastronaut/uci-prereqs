@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		{% load static %}
+
+		<link rel="stylesheet" href="{% static 'uciprereqs/css/minimal.css' %}" media="all">
+		<link rel="stylesheet" type="text/css" href="{% static 'uciprereqs/css/style.css' %}">
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		{% block extraincludes %} {% endblock %}
+		<title>{% block title %} {% endblock %}</title>
+	</head>
+	<body>
+		<div id='headerthing'>
+			<p>
+			<br><span id='headertitle' >{% block headertitle %} {% endblock %}</span>
+			</p>
+		</div>
+		<br>
+		<div class="wrapper">{% block txt %} {% endblock %}</div>
+	</body>
+	<script type='text/javascript' src="{% static 'uciprereqs/js/getprereqs.js' %}"></script>
+</html>
