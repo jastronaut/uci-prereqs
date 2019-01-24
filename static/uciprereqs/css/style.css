@@ -239,3 +239,13 @@ li:hover {
 .prev-class:hover {
 	font-style: bold;
 }
+
+.each-major h3 {
+	margin-left: 2%;
+	margin-bottom: 1%;
+}
+
+.each-major ul {
+	padding-left: 2%;
+	margin-top: 0;
+}
