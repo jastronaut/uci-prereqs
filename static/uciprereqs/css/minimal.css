@@ -14,14 +14,6 @@ body {
 		padding-left: 2vw !important;
 		padding-right: 2vw !important;
 	}
-	#foot-nav {
-		font-size: 80% !important;
-		height: 5vh !important;
-		padding-top: 10px !important;
-	}
-	#foot-nav > p {
-		height: 5vh !important;
-	}
 	.div-row {
 		display: inline;
 		width: 100%;
@@ -46,16 +38,6 @@ body {
 		padding-left: 10vw !important;
 		padding-right: 10vw !important;
 	}
-	#foot-nav {
-		font-size: 100% !important;
-		/*height: 3vh !important;*/
-		/*padding-top: 15px !important;*/
-		padding-top: 1vh;
-		padding-bottom: 1vh;
-	}
-	#foot-nav > p {
-		height: 3vh !important;
-	}
 	.div-row {
 		display: flex;
 	}
@@ -70,28 +52,7 @@ body {
 		width: 100%;
 	}
 }
-a.hovlink {
-	transition: all 0.1s ease;
-	color: #88aaaa !important;
-	text-decoration: none;
-}
 
-a.hovlink:hover {
-	transition: all 0.1s ease;
-	color: #fff !important;
-	background: #88aaaa;
-}
-a.hl {
-	transition: all 0.1s ease;
-	color: #88aaaa !important;
-	text-decoration: none;
-}
-
-a.hl:hover {
-	transition: all 0.1s ease;
-	color: #fff !important;
-	background: #88aaaa;
-}
 .mainBoxes {
 	text-align: justify;
 	font-size: 1em;
@@ -137,39 +98,6 @@ img .txtimg {
 	padding: 5px 5px !important;
 }
 
-#foot-nav {
-	background-color: #2d2d2d;
-	font-size: 0.80em !important;
-	position:fixed !important;
-	z-index: 3 !important;
-	bottom: -1px;
-	right: 0px;
-	text-align: center !important;
-	width: 100%;
-	margin: 0px 0px !important;
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center center;
-	color: #DDDDDD;
-}
-
-#foot-nav > p {
-	display: table-cell !important;
-	vertical-align: middle !important;
-	text-align: center !important;
-}
-
-#foot-nav a {
-	color: #fff !important;
-	text-decoration: none;
-	transition: all 0.1s ease;
-}
-
-#foot-nav a:hover {
-	transition: all 0.1s ease;
-	color: #aaaaaa !important;
-}
-
 #headerthing {
 	top: 0px;
 	left:0px;
@@ -207,30 +135,6 @@ img .txtimg {
 	z-index: 1;
 	margin: 0 auto 0 auto !important;
 	padding: 0 0;
-}
-
-#socialArea {
-	top:0px;
-	right: 0px;
-	padding-right: 10px;
-	color: #88aaaa;
-	z-index: 4;
-	float: right;
-	text-align: right;
-}
-
-#socialArea a {
-	transition: all 0.1s ease;
-	color: #fff !important;
-}
-
-#socialArea a:hover {
-	transition: all 0.1s ease;
-	color: #aaaaaa !important;
-}
-
-#socialArea i {
-	padding-left: 10px !important;
 }
 
 #picturebox {
