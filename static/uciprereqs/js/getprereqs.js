@@ -38,6 +38,22 @@ function showClasses(classlist) {
     }
 }
 
+function showMajorReqs(majorreqs) {
+    $('.major-reqs').css('display', 'block');
+    let eachMajor = $('.each-major');
+    for (var major in majorreqs) {
+        if (majorreqs[major].length > 0){ 
+            eachMajor.append('<h3>' + major + '</h3>');
+            let addMajorCats = '<ul>';
+            for (var cat in majorreqs[major]) {
+                addMajorCats = addMajorCats + '<li>' + majorreqs[major][cat] + '</li>';
+            }
+            addMajorCats += '</ul>';
+            eachMajor.append(addMajorCats);
+        }
+    }
+}
+
 function addHistory() {
     let prevclasses = $('.checked-class');
     try {
@@ -76,6 +92,8 @@ function resetAreas() {
     var prereqs = $('#prereqs');
     prereqs.css('display', 'none');
     prereqs.empty();
+    $('.major-reqs').css('display', 'none');
+    $('.each-major').empty();
     $('#desc').css('display', 'none');
     $('#title').css('display', 'none');
     $('.quarterbox').css('display', 'none');
@@ -123,6 +141,10 @@ $('#classList').change(function() {
                 $('#desc').css('display', 'block');
                 showPrereqs(data['prereqs']);
                 showListing(data['listing']);
+                if (data['requirements'] != null)
+                    showMajorReqs(data['requirements']);
+                else
+                    console.log("Sorry can't print!");
                 addHistory();
             }
         });
