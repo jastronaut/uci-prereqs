@@ -1,6 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans';
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
-@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i';
 body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0 0;
@@ -53,24 +52,12 @@ body {
 	}
 }
 
-.mainBoxes {
-	text-align: justify;
-	font-size: 1em;
-	overflow: hidden;
-	padding: 5px 20px 10px 20px;
-	margin: 10px;
-}
-
 .box {
 	text-align: justify;
 	font-size: 1em;
 	overflow: hidden;
 	padding: 5px 20px 10px 20px;
 	margin: 10px;
-}
-
-.imgbox {
-	padding: 1vh 1vw !important;
 }
 
 h1 {
@@ -81,16 +68,16 @@ h1 {
 
 h2 {
 	font-family: Montserrat;
-	font-weight: 300;
+	font-weight: 700;
+	font-size: 1.25em;
 	margin: 0 0 !important;
 	text-align: left;
 }
 
 h3 {
-	font-family: 'PLayfair Display';
-	font-weight: 700;
-	font-style: italic;
-	margin: 0 0 !important;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	margin-top: 1%;
 	text-align: left;
 }
 
@@ -112,9 +99,7 @@ img .txtimg {
 }
 
 #headertitle {
-	font-family: 'PLayfair Display';
 	font-weight: 700;
-	font-style: italic;
 	margin-top: 0px;
 	z-index: 1;
 }
@@ -137,43 +122,8 @@ img .txtimg {
 	padding: 0 0;
 }
 
-#picturebox {
-	height: 10px;
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center center;
-	border-radius: 25px;
-}
-
-.mainBoxes h1 {
-	margin-top: 0 !important; 
-}
-
 .box h1 {
 	margin-top: 0 !important; 
-}
-
-.center-img {
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.feature {
-	
-	padding-left: 0px;
-	margin: 0;
-	text-align: center;
-}
-
-.feature h2{
-	font-family: 'Playfair Display';
-	font-weight: 700;
-	font-style: italic;
-}
-
-.feature-txt {
-	margin-top: 0;
 }
 
 @keyframes fade-in {
