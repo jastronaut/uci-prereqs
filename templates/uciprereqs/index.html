@@ -3,106 +3,118 @@
 {% block headertitle %}UCI Prereqs{% endblock %}
 
 {% block txt %}
-<div class="row" id='main-row'>
-
-	<div class="box spacer" style="flex-basis:2%"></div>
-
-	<div class="box" style="flex-basis:auto" id="selectside">
+<div class="columns">
+	<div class="column is-one-quarter">
 		<form method="post">
 			<label for="selectDept">Select Department</label>
 			<br>
-			<select name="selectDept" id="selectDept">
-				<option value="">Departments</option>
-				{% for dept in openDepts %}
+			<div class="select">
+				<select name="selectDept" id="selectDept">
+					<option value="">Departments</option>
+					{% for dept in openDepts %}
 					<option value="{{ dept }}">{{ dept }}</option>
-				{% endfor %}
-			</select>
+					{% endfor %}
+				</select>
+			</div>
+			<br>
+			<label class='classList' for="classlist" id='classesLabel' style='visibility: hidden'>Select Class</label>
+			<br>
+			<div class="select classList" style="visibility: hidden;">
+				<select class='classList' name="classList" id="classList">
+					<option value="">Courses</option>
+				</select>
+			</div>
 		</form>
 
-		<label class='classList' for="classlist" id='classesLabel' style='display: none'>Select Class</label>
-		<select class='classList' name="classList" id="classList" style="display: none">
-			<option value="">Courses</option>
-		</select>
+
 		<br>
 
 		<label for="history">
 			Recently Viewed
 		</label>
 
-		<div class="history" name="history">
-			<div class="checked-class temp">
-				<span class="prev-class"></span>
-			</div>
-		</div>
+		<table class="table history" name='history'>
+			<tbody>
+				<tr class="checked-class temp">
+					<td class='prev-class'></td>
+				</tr>
+			</tbody>
+		</table>
 
 	</div>
-	<div class="box" style="flex-basis:55%" id="results">
+	<div class="column">
 		<br>
 		<span id="coursebadge">
-			<span id="selectedDept">d</span>
-			<span id="selectedNum"></span>
+			<h1 class="title is-2" id="selectedDept"></h1>
+			<h1 class="title is-2" id="selectedNum"></h1>
 		</span>
-		<span id="title" class="coursetitle"></span>
-		<br>
-		<span id="desc" class="desc"></span>
-			<ul class="prereqs" id="prereqs" style='display:none'>
-				<li class='prereqitem'>prereq</li>
-			</ul>
+		<h3 class="subtitle is-3 has-text-gray coursetitle" id="title">
+			</h2>
+			<br>
+			<br>
+			<article class="message desc" style="display: none">
+				<div class="message-body desc" id="desc"></div>
+			</article>
+			<div class="box prereqs" style="visibility: hidden">
+				<h3 class="title is-3">Prerequisites</h3>
+				<table class="prereqs table is-hoverable" id="prereqs">
+					<tr>
+						<td class='prereqitem'></td>
+					</tr>
+				</table>
+			</div>
 			<br>
 			<div class="major-reqs" style="display:none">
-				<h2>Major Requirements Filled</h2>
+				<h3 class="title is-3">Major Requirements Filled</h3>
 				<div class="each-major">
-					<h3>Major Name</h3>
-					<ul>
-						<li>Specialization1</li>
-						<li>Specialization2</li>
-					</ul>
 				</div>
 			</div>
-			<div id="listing-area">
-			<div class="listing no-listing" id="no-listing">
-			</div>
-			<div class="listing listing-schedule" id="listing-schedule">
-				<br>
-				<div class="listing-row row">
-					<div class="box quarterbox" id='Fall' style='flex-basis:50%'>
-						<div class="quartertitle">
-							Fall
-						</div>
-						<div class="quartercontent" id='Fallqcontent'>
-							<div class="professor-listing">
-							</div>
-						</div>
-					</div>
-					<div class="box quarterbox" id='Winter' style='flex-basis:50%'>
-						<div class="quartertitle">
-							Winter
-						</div>
-						<div class="quartercontent" id='Winterqcontent'>
-							<div class="professor-listing">
-							</div>
-						</div>
-					</div>
-					<div class="box quarterbox" id='Spring' style='flex-basis:50%'>
-						<div class="quartertitle">
-							Spring
-						</div>
-						<div class="quartercontent" id='Springqcontent'>
-							<div class="professor-listing">
-							</div>
-						</div>
-					</div>
-
+			<div id="listing-area" style="display:none">
+				<div class="listing no-listing" id="no-listing">
 				</div>
+				<div class="listing listing-schedule" id="listing-schedule">
+					<br>
+					<div class="listing-row columns">
+						<div class="column quarterbox half" id='Fall'>
+							<article class="message">
+								<div class="message-header">
+									<p class="quartertitle">Fall</p>
+								</div>
+								<div class="message-body quartercontent" id="Fallqcontent">
+									<div class="professor-listing">
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="column quarterbox half" id='Winter'>
+							<article class="message">
+								<div class="message-header">
+									<p class="quartertitle">Winter</p>
+								</div>
+								<div class="message-body quartercontent" id="Winterqcontent">
+									<div class="professor-listing">
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="column quarterbox half" id='Spring'>
+							<article class="message">
+								<div class="message-header">
+									<p class="quartertitle">Spring</p>
+								</div>
+								<div class="message-body quartercontent" id="Springqcontent">
+									<div class="professor-listing">
+									</div>
+								</div>
+							</article>
+						</div>
+
+					</div>
+				</div>
+
 			</div>
-
-		</div>
-		<div class="debugarea">
-
-		</div>
 	</div>
 </div>
-<div class="box spacer" style="flex-basis:1%"></div>
 </div>
 </div>
 

@@ -1,251 +1,34 @@
-* {
-	text-align: left !important;
-}
-
-#headerthing, body {
-	background: #203b6a;
-}
-
-.row {
-	background: #fff;
-	border-radius: 15px;
-	position: relative;
-}
-
-#headertitle {
-	font-family: 'Montserrat' !important;
-	font-style: normal;
-}
-
-#headerdesc {
-	color: #e9b51b;
-}
-
-.prereqs {
-	/* word-wrap: break-word; */
-	width: inherit;
-}
-
-@media only screen and (max-width: 800px)
-{
-	.spacer {
-		display: none !important;
-	}
-
-	#selectside {
-		padding-right: 0;
-	}
-
-	#results {
-		margin-left: 5px
-	}
-
-	body {
-		background: #fff !important;
-	}
-}
-
-#main-row {
-	min-height: 60vh;
-}
-
-select {
-	font-size: 100%;
-	-webkit-appearance: none !important;
-	-moz-appearance: none !important;
-	padding: 0.75rem 0.75rem;
-	border-color: #aaa;
-	width: 100%;
-	box-sizing: border-box;
-	transition: all 0.1s ease;
-}
-
-select:hover {
-	border-color: #777;
-	transition: all 0.1s ease;
-}
-
-label {
-	color: #aaa;
-}
-
-#coursebadge {
-	color: #fff;
-	background: #e9b51b;
-	padding: 0.5% 0.5%;
-	width: fit-content;
-	display: none;
-	font-family: 'Montserrat';
-	font-size: 1.5em;
-	font-weight: 700;
-	border-radius: 5px;
-}
-
-.coursetitle, .desc {
-	display: none;
-}
-
-.coursetitle {
-	margin-left: 1%;
-	font-family: 'Montserrat';
-	font-size: 1.5em;
-	font-weight: 700;
-	color: #e9b51b;
-}
-
-.desc {
-	color: #aaa;
-}
-
-@keyframes fadein-rise {
-	0% {
-		opacity: 0;
-		margin-top: 15vh;
-	}
-	30% {
-		opacity: 0.3;
-		margin-top: 13.5vh;
-	}
-	95% {
-		opacity: .99;
-		margin-top: 1.5vh;
-	}
-	100% {
-		opacity: 1;
-		margin-top: 0;
-	}
-
-}
-
-@keyframes fadein {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-#headertitle, #headerdesc, #main-row {
-	animation-name: fadein;
-	opacity: 0;
-	animation: fadein ease-in 1;
-	animation-duration: .25s;
-	animation-fill-mode: forwards;
-}
-
-li {
-	list-style: none;
-	border-bottom: 1px solid #e0e0e0;
-	padding: 1% 1%;
-	transition: all 0.1s ease;
-	border-radius: 2px;
-}
-
-li:hover {
-	background: #c0c0c0;
-	color: #fff;
-	transition: all 0.1s ease;
-}
-
-/* .listing-schedule {
-	display: none;
-} */
-
-.no-listing {
-	/* display: none; */
-	font-style: italic;
-	color: #aaa;
-}
-.quarterbox {
-	padding: 0 0;
-	flex-basis: 33%;
-	margin-left: 0;
-	border-bottom: 1px solid #e0e0e0;
-	border-radius: 0 0 5px 5px;
-	display: none;
-}
-
-.quartertitle {
-	width: inherit;
-	background: #203b6a;
-	color: #fff;
-	font-family: 'Montserrat';
-	font-weight: 700;
-	font-size: 1.25em;
-	text-align: center !important;
-	border-radius: 5px 5px 0 0;
-	padding: 0.5% 0.5%;
-}
-
-.quartercontent {
-	padding: 2% 0 !important;
-	font-size: 0.8em;
-}
-
-.professor-listing {
-	padding: 1% 2%;
-}
-
-.professor-listing:nth-child(even) {
-	border-left: 5px solid #aaa;
-	background: linear-gradient(
-		to left,
-		rgba(0,0,0,0),
-		rgba(0, 0, 0, 0) 50%,
-		#aaa 50%,
-		#aaa
-		);
-	background-position: 100% 0;
-	background-size: 200% 100%;
-	transition: all 0.25s ease;
-}
-
-.professor-listing:nth-child(even):hover {
-	background-position: 0 0;
-}
-
-.professor-listing:nth-child(odd) {
-	border-left: 5px solid #e0e0e0;
-	background: linear-gradient(
-		to left,
-		rgba(0,0,0,0),
-		rgba(0, 0, 0, 0) 50%,
-		#e0e0e0 50%,
-		#e0e0e0
-		);
-	background-position: 100% 0;
-	background-size: 200% 100%;
-	transition: all 0.25s ease;
-}
-
-.professor-listing:nth-child(odd):hover {
-	background-position: 0 0;
-}
-
-.close {
-	display: none;
-	margin-left: 50%
-}
-
-.checked-class:hover > .close {
+#coursebadge h1 {
 	display: inline;
 }
 
-.prev-class {
+.checked-class {
 	cursor: pointer;
 }
 
-.prev-class:hover {
-	font-style: bold;
+.title.is-4 {
+	margin-bottom: 0;
 }
 
-.each-major h3 {
-	margin-left: 2%;
-	margin-bottom: 1%;
+.hero {
+	background-color: #203b6a;
 }
 
-.each-major ul {
-	padding-left: 2%;
-	margin-top: 0;
+.hero-body .container .title {
+	color: #fff;
+}
+.hero-body .container .subtitle {
+	color: #aaa;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+	border-color: #203b6a;
+}
+
+.half {
+	flex-basis:50%;
+}
+
+.is-warning {
+	background-color: #e9b51b;
 }
