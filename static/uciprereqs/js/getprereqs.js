@@ -5,13 +5,14 @@ var maxHist = 4;
 
 function showPrereqs(prereqs) {
     let prerequl = $('#prereqs');
-    prerequl.css('display', 'inline');
+    $('.prereqs').css('visibility', 'visible');
     for (var p in prereqs) {
-        prerequl.append('<li class="prereqitem">' + prereqs[p] + '</li>');
+        prerequl.append('<tr><td class="prereqitem">' + prereqs[p] + '</td></tr>');
     }
 }
 
 function showListing(listing) {
+    $('#listing-area').css('display', 'block');
     if (listing === "No scheduled courses" || listing === "No listing available") {
         let nolisting = $('#no-listing');
         nolisting.css('display', 'block');
@@ -29,7 +30,7 @@ function showListing(listing) {
 }
 
 function showClasses(classlist) {
-    $('.classList').css('display', 'block');
+    $('.classList').css('visibility', 'visible');
     let classSelect = $('#classList');
     classSelect.empty();
     classSelect.append('<option value="">Courses</option>');
@@ -43,12 +44,12 @@ function showMajorReqs(majorreqs) {
     let eachMajor = $('.each-major');
     for (var major in majorreqs) {
         if (majorreqs[major].length > 0){ 
-            eachMajor.append('<h3>' + major + '</h3>');
-            let addMajorCats = '<ul>';
+            eachMajor.append('<h4 class="title is-4">' + major + '</h3>');
+            let addMajorCats = '<table class="table">';
             for (var cat in majorreqs[major]) {
-                addMajorCats = addMajorCats + '<li>' + majorreqs[major][cat] + '</li>';
+                addMajorCats = addMajorCats + '<tr><td>' + majorreqs[major][cat] + '</td></tr>';
             }
-            addMajorCats += '</ul>';
+            addMajorCats += '</table>';
             eachMajor.append(addMajorCats);
         }
     }
@@ -89,18 +90,19 @@ function addHistory() {
 }
 
 function resetAreas() {
-    var prereqs = $('#prereqs');
-    prereqs.css('display', 'none');
-    prereqs.empty();
+    $('#listing-area').css('display', 'none');
+    $('#prereqs').empty();
+    $('.prereqs').css('visibility', 'hidden');
     $('.major-reqs').css('display', 'none');
     $('.each-major').empty();
-    $('#desc').css('display', 'none');
+    $('.desc').css('display', 'none');
     $('#title').css('display', 'none');
     $('.quarterbox').css('display', 'none');
     $('.no-listing').css('display', 'none');
 }
 
 $('#selectDept').change(function() {
+    resetAreas();
 	let d = $(this).val();
 	if (d != "") {
         dept = d;
@@ -114,7 +116,7 @@ $('#selectDept').change(function() {
                 showClasses(data['courses']);
                 $('#selectedDept').html(dept);
                 $('#coursebadge').css('display', 'inline');
-                $('#selectedNum').html();
+                $('#selectedNum').html('');
             }
 	});
 }
@@ -138,7 +140,7 @@ $('#classList').change(function() {
                 if (data['desc'] != null)
                     $('#desc').html('<br>' + data['desc']);
                 $('#title').css('display', 'inline')
-                $('#desc').css('display', 'block');
+                $('.desc').css('display', 'block');
                 showPrereqs(data['prereqs']);
                 showListing(data['listing']);
                 if (data['requirements'] != null)
