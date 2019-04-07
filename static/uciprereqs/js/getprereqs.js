@@ -11,6 +11,15 @@ function showPrereqs(prereqs) {
     }
 }
 
+function showNext(next) {
+    let nextul = $('#next');
+    $('.next').css('visibility', 'visible');
+    for (var n in next) {
+        nextul.append('<tr><td class="nextitem">' + next[n] + '</td></tr>');
+    }
+}
+
+
 function showListing(listing) {
     $('#listing-area').css('display', 'block');
     if (listing === "No scheduled courses" || listing === "No listing available") {
@@ -93,6 +102,8 @@ function resetAreas() {
     $('#listing-area').css('display', 'none');
     $('#prereqs').empty();
     $('.prereqs').css('visibility', 'hidden');
+    $('#next').empty();
+    $('.next').css('visibility', 'hidden');
     $('.major-reqs').css('display', 'none');
     $('.each-major').empty();
     $('.desc').css('display', 'none');
@@ -143,6 +154,7 @@ $('#classList').change(function() {
                 $('.desc').css('display', 'block');
                 showPrereqs(data['prereqs']);
                 showListing(data['listing']);
+                showNext(data['next']);
                 if (data['requirements'] != null)
                     showMajorReqs(data['requirements']);
                 else
